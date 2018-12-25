@@ -27,6 +27,8 @@ var menuItemHtml = "snippets/menu-item.html";
 var insertHtml = function (selector, html) {
   var targetElem = document.querySelector(selector);
   targetElem.innerHTML = html;
+  console.log("Just inserted into " + selector + " the following:");
+  console.log(html);
 };
 
 // Show loading icon inside element identified by 'selector'.
@@ -122,11 +124,12 @@ function buildAndShowHomeHTML (categories) {
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, 'randomCategoryShortName',
                                                        "'" + chosenCategoryShortName + "'");
 
-      console.log("HTML to be inserted: " + homeHtmlToInsertIntoMainPage);
+      //console.log("HTML to be inserted: " + homeHtmlToInsertIntoMainPage);
       
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
+      
       insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
 
