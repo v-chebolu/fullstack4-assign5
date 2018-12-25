@@ -27,7 +27,6 @@ var menuItemHtml = "snippets/menu-item.html";
 var insertHtml = function (selector, html) {
   var targetElem = document.querySelector(selector);
   targetElem.innerHTML = html;
-  console.log(html);
 };
 
 // Show loading icon inside element identified by 'selector'.
@@ -94,7 +93,6 @@ $ajaxUtils.sendGetRequest(
 // Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
-  console.log("buildAndShowHomeHTML called " + categories.length);
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
