@@ -27,7 +27,6 @@ var menuItemHtml = "snippets/menu-item.html";
 var insertHtml = function (selector, html) {
   var targetElem = document.querySelector(selector);
   targetElem.innerHTML = html;
-  console.log("Just inserted into " + selector + " the following:");
   console.log(html);
 };
 
@@ -84,8 +83,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // On first load, show home view
 showLoading("#main-content");
 
-console.log("Before the first ajax request");
-
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
   buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
@@ -124,7 +121,6 @@ function buildAndShowHomeHTML (categories) {
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, 'randomCategoryShortName',
                                                        "'" + chosenCategoryShortName + "'");
 
-      console.log("HTML to be inserted: " + homeHtmlToInsertIntoMainPage);
       
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
